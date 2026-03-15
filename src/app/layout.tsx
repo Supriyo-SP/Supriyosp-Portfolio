@@ -26,8 +26,8 @@ const personSchema = {
   email: siteConfig.email,
   address: {
     "@type": "PostalAddress",
-    addressLocality: siteConfig.location,
-    addressCountry: "IN",
+    "addressLocality": siteConfig.location,
+    "addressCountry": "IN",
   },
   sameAs: siteConfig.sameAs,
   knowsAbout: siteConfig.keywords,
@@ -47,6 +47,11 @@ export const metadata: Metadata = {
   category: "technology",
   alternates: {
     canonical: "/",
+  },
+  verification: {
+    // FIXED: Moved inside the main metadata object and removed the "google-site-verification=" prefix
+    // Google just needs the token string itself.
+    google: "KiUCVH3CeR-1xNbfWXAZJM1KK6IRRTuEvBueqlgZUV8",
   },
   openGraph: {
     type: "website",

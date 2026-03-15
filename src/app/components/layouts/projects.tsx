@@ -8,27 +8,35 @@ const projects = [
     icon: Globe,
     tags: ['Next.js', 'Strapi CMS', 'React', 'Node.js'],
     gradient: 'from-cyan-500 to-blue-600',
+    liveUrl: 'https://iiekalyani.vercel.app',
+    githubUrl: 'https://github.com/iietechclub/IIE-Kalyani-frontend',
   },
   {
-    title: 'Learnity – E-Learning Platform',
-    description: 'Developed a full-stack online learning platform with JWT-based authentication, allowing secure user access and dynamic course delivery.',
-    icon: BookOpen,
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
-    gradient: 'from-purple-500 to-pink-600',
+    title: 'Iphigenia-11.0',
+    description: 'Website of the college annual Techno-Cultural event, a fully responsive website.',
+    icon: FileText,
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    gradient: 'from-green-500 to-emerald-600',
+    liveUrl: 'https://iphigenia11.vercel.app',
+    githubUrl: 'https://github.com/Supriyo-SP/IPHIGENIA_11',
   },
   {
     title: 'BlogHub Publishing Platform',
-    description: 'Built a responsive blog publishing and content management platform with efficient backend handling and smooth content delivery.',
+    description: 'Built a responsive blog publishing platform with efficient backend handling and smooth content delivery.',
     icon: FileText,
     tags: ['Node.js', 'Express', 'REST API'],
     gradient: 'from-green-500 to-emerald-600',
+    // liveUrl: '#',
+    githubUrl: '#',
   },
   {
     title: 'Robust URL Shortener',
     description: 'Designed a high-performance URL shortening service using Spring Boot and MySQL with reliable database persistence and fast redirection logic.',
     icon: Link,
-    tags: ['Java', 'Spring Boot', 'MySQL', 'REST API'],
+    tags: ['Java', 'Spring Boot', 'REST API'],
     gradient: 'from-orange-500 to-red-600',
+    // liveUrl: '#',
+    githubUrl: 'https://github.com/Supriyo-SP/url-shortener-Spring-boot',
   },
 ];
 
@@ -81,12 +89,24 @@ export default function Projects() {
                         </h3>
                         {/* Action buttons */}
                         <div className="flex gap-1.5 flex-shrink-0">
-                          <button className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-cyan-500/20 hover:border-cyan-400/30 transition-colors">
+                          <a
+                            href={project.liveUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`Open live project for ${project.title}`}
+                            className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-cyan-500/20 hover:border-cyan-400/30 transition-colors"
+                          >
                             <ExternalLink size={14} className="text-cyan-400" />
-                          </button>
-                          <button className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
+                          </a>
+                          <a
+                            href={project.githubUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            aria-label={`Open GitHub repository for ${project.title}`}
+                            className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                          >
                             <Github size={14} className="text-gray-400" />
-                          </button>
+                          </a>
                         </div>
                       </div>
                       
