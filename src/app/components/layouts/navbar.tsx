@@ -36,18 +36,18 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-3 left-1/2 z-50 w-[calc(100%-1rem)] md:w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 rounded-[2rem] border transition-all duration-300 ${
         scrolled
-          ? 'bg-slate-900/80 backdrop-blur-xl border-b border-white/10 shadow-2xl'
-          : 'bg-transparent'
+          ? 'bg-white/12 backdrop-blur-3xl border-white/30 shadow-[0_12px_36px_rgba(2,6,23,0.55)]'
+          : 'bg-white/10 backdrop-blur-2xl border-white/25 shadow-[0_10px_30px_rgba(2,6,23,0.45)]'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <div className="flex items-center justify-between h-14 md:h-16">
+      <div className="px-3 md:px-6">
+        <div className="relative flex items-center justify-center md:justify-between h-12 md:h-16">
           {/* Logo */}
           <motion.a
             href="#hero"
-            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
+            className="text-xl md:text-3xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -82,7 +82,7 @@ export default function Navbar() {
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-2">
+          <div className="hidden md:flex items-center gap-2">
             {socialLinks.map((social) => {
               const Icon = social.icon;
               return (
@@ -110,19 +110,19 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden flex items-center justify-center gap-1 pb-3">
+        <div className="md:hidden flex items-center justify-center gap-1 pb-2">
           {navItems.map((item) => {
             const Icon = item.icon;
             return (
               <motion.a
                 key={item.name}
                 href={item.href}
-                className="relative px-3 py-1.5 rounded-lg text-xs text-gray-300 hover:text-white transition-colors group flex items-center gap-1.5"
+                className="relative px-2.5 py-1 rounded-full text-[11px] text-gray-300 hover:text-white transition-colors group flex items-center gap-1 border border-white/10 bg-white/5"
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 backdrop-blur-sm border border-white/10 transition-opacity duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-lg blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
-                <Icon size={14} className="relative z-10" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-full opacity-0 group-hover:opacity-100 backdrop-blur-sm border border-white/10 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+                <Icon size={12} className="relative z-10" />
                 <span className="relative z-10 font-medium">{item.name}</span>
               </motion.a>
             );

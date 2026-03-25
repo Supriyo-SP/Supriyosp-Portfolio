@@ -1,6 +1,7 @@
 import { motion } from 'motion/react';
 import { Code2, Server, Wrench } from 'lucide-react';
 import { useRef, useState } from 'react';
+import { span } from 'motion/react-client';
 
 const frontendSkills = ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'HTML/CSS'];
 const backendSkills = ['Node.js', 'Express', 'MongoDB', 'PostgreSQL', 'REST APIs'];

@@ -17,7 +17,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center px-4 md:px-6 pt-24 md:pt-32 pb-12 relative overflow-hidden"
+      className="min-h-screen flex items-start md:items-center justify-center px-4 md:px-6 pt-28 md:pt-32 pb-12 relative overflow-hidden"
     >
       {/* Animated grid background */}
       <div className="absolute inset-0 opacity-20">
@@ -148,7 +148,6 @@ export default function Hero() {
                   text: "Frontend Dev",
                   gradient: "from-cyan-500 to-blue-500",
                 },
-
                 {
                   icon: Zap,
                   text: "CS Student",
@@ -247,12 +246,12 @@ export default function Hero() {
               <p className="text-gray-300 text-sm md:text-base leading-relaxed text-center">
                 I’m Supriyo Pal, a Computer Science student and Full Stack
                 Developer based in Kalyani, West Bengal. I build modern web
-                applications using the MERN stack, Next.js, and Java Spring
-                Boot, with a focus on clean architecture, secure APIs, and
+                applications using the MERN stack and Next.js, with a focus on
+                clean architecture, secure APIs, and
                 scalable backend systems. I enjoy transforming ideas into
                 practical products—from institutional platforms to full-stack
                 learning systems. Currently pursuing my B.Tech in CSE (CGPA:
-                8.67), I’m continuously improving my development skills while
+                8.29), I’m continuously improving my development skills while
                 working on real-world projects.
               </p>
 
@@ -272,8 +271,8 @@ export default function Hero() {
                       </div>
                       <div className="flex flex-wrap gap-x-4 gap-y-1 text-xs md:text-sm text-gray-300">
                         <span>
-                          SGPA:{" "}
-                          <span className="text-white font-semibold">8.67</span>
+                          CGPA:{" "}
+                          <span className="text-white font-semibold">8.29</span>
                         </span>
                         <span>
                           Expected:{" "}
