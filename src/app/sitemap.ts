@@ -5,12 +5,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = getBaseUrl();
   const lastModified = new Date();
 
-  // Define your routes here
+  // Define your single page route here since it's a SPA portfolio
   const routes = [
     "",           // Home
-    "/projects",  // Projects page
-    "/about",     // About page
-    "/contact",   // Contact page
   ];
 
   return routes.map((route) => ({

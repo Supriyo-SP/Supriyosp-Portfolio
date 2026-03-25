@@ -26,8 +26,6 @@ const projects = [
     icon: FileText,
     tags: ['Node.js', 'Express', 'REST API'],
     gradient: 'from-green-500 to-emerald-600',
-    // liveUrl: '#',
-    githubUrl: '#',
   },
   {
     title: 'Robust URL Shortener',
@@ -35,7 +33,6 @@ const projects = [
     icon: Link,
     tags: ['Java', 'Spring Boot', 'REST API'],
     gradient: 'from-orange-500 to-red-600',
-    // liveUrl: '#',
     githubUrl: 'https://github.com/Supriyo-SP/url-shortener-Spring-boot',
   },
 ];
@@ -77,7 +74,7 @@ export default function Projects() {
                 <div className="relative rounded-xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-white/10 p-3 md:p-4 group-hover:border-white/20 transition-all duration-300">
                   <div className="flex items-start gap-3">
                     {/* Icon */}
-                    <div className={`flex-shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg`}>
+                    <div className={`shrink-0 w-10 h-10 md:w-12 md:h-12 rounded-lg bg-gradient-to-br ${project.gradient} flex items-center justify-center shadow-lg`}>
                       <Icon size={20} className="text-white md:w-6 md:h-6" />
                     </div>
 
@@ -89,24 +86,28 @@ export default function Projects() {
                         </h3>
                         {/* Action buttons */}
                         <div className="flex gap-1.5 flex-shrink-0">
-                          <a
-                            href={project.liveUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={`Open live project for ${project.title}`}
-                            className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-cyan-500/20 hover:border-cyan-400/30 transition-colors"
-                          >
-                            <ExternalLink size={14} className="text-cyan-400" />
-                          </a>
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label={`Open GitHub repository for ${project.title}`}
-                            className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
-                          >
-                            <Github size={14} className="text-gray-400" />
-                          </a>
+                          {project.liveUrl && (
+                            <a
+                              href={project.liveUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`Open live project for ${project.title}`}
+                              className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-cyan-500/20 hover:border-cyan-400/30 transition-colors"
+                            >
+                              <ExternalLink size={14} className="text-cyan-400" />
+                            </a>
+                          )}
+                          {project.githubUrl && project.githubUrl !== '#' && (
+                            <a
+                              href={project.githubUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              aria-label={`Open GitHub repository for ${project.title}`}
+                              className="p-1.5 rounded-md bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                            >
+                              <Github size={14} className="text-gray-400" />
+                            </a>
+                          )}
                         </div>
                       </div>
                       

@@ -74,6 +74,12 @@ export const metadata: Metadata = {
     title: `${siteConfig.name} | ${siteConfig.title}`,
     description: siteConfig.description,
     images: ["/pp_web.jpeg"],
+    creator: "@supriyo__9",
+  },
+  appleWebApp: {
+    title: siteConfig.name,
+    statusBarStyle: "default",
+    capable: true,
   },
   robots: {
     index: true,

@@ -122,7 +122,7 @@ export default function Hero() {
                     <div className="absolute inset-0">
                       <Image
                         src="/pp_web.jpeg"
-                        alt="Profile Photo"
+                        alt="Supriyo Pal - Full Stack Developer Profile Photo"
                         fill
                         priority
                         sizes="(min-width: 1280px) 320px, 280px"
@@ -148,11 +148,7 @@ export default function Hero() {
                   text: "Frontend Dev",
                   gradient: "from-cyan-500 to-blue-500",
                 },
-                {
-                  icon: Cpu,
-                  text: "IoT Builder",
-                  gradient: "from-purple-500 to-pink-500",
-                },
+
                 {
                   icon: Zap,
                   text: "CS Student",
@@ -192,7 +188,8 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.7 }}
               className="text-base md:text-lg text-gray-300 leading-relaxed max-w-2xl"
             >
-              I build full stack web applications with Next.js, MERN, and Spring Boot, along with smart IoT systems that connect strong backend architecture to clean frontend experiences.
+              I build full stack web applications with Next.js,React.js,Node.js along with postgres database that connect strong backend
+              architecture to clean frontend experiences.
             </motion.p>
 
             {/* CTAs */}
@@ -244,13 +241,6 @@ export default function Hero() {
                 <h3 className="flex items-center justify-center text-3xl md:text-4xl font-bold bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                   About Me
                 </h3>
-                {/* <motion.div
-                  animate={{ rotate: [0, 360] }}
-                  transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
-                  className="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-400 to-purple-600 flex items-center justify-center"
-                >
-                  <Code2 size={20} className="text-white" />
-                </motion.div> */}
               </div>
 
               {/* Bio */}

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Code2, Server, Wrench, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Code2, Server, Wrench } from 'lucide-react';
 import { useRef, useState } from 'react';
 
 const frontendSkills = ['React', 'TypeScript', 'Tailwind CSS', 'Next.js', 'HTML/CSS'];

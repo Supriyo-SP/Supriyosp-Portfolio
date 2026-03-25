@@ -9,7 +9,7 @@ import Footer from './components/layouts/footer';
  
 export default function Home() {
   return (
-    <div className="bg-slate-900 text-gray-300 min-h-screen">
+    <div className="bg-slate-900 text-gray-300 min-h-screen overflow-x-hidden">
       <Navbar />
       <Hero />
       <Skills />
