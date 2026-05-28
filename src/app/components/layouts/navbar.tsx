@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Home, Code2, Briefcase, Mail, Github, Linkedin, Instagram } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { siteConfig } from '@/src/lib/site';
+import LeetCodeIcon from '@/src/app/components/ui/leetcode-icon';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,14 +22,16 @@ export default function Navbar() {
     { name: 'Contact', icon: Mail, href: '#contact' },
   ];
 
+  const iconMap = {
+    github: Github,
+    linkedin: Linkedin,
+    leetcode: LeetCodeIcon,
+    instagram: Instagram,
+  } as const;
+
   const socialLinks = siteConfig.socialLinks.map((social) => ({
     ...social,
-    icon:
-      social.platform === 'github'
-        ? Github
-        : social.platform === 'linkedin'
-          ? Linkedin
-          : Instagram,
+    icon: iconMap[social.platform as keyof typeof iconMap] ?? Instagram,
   }));
 
   return (
@@ -67,10 +70,10 @@ export default function Navbar() {
                   whileTap={{ scale: 0.95 }}
                 >
                   {/* Glassmorphic background on hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 backdrop-blur-sm border border-white/10 transition-opacity duration-300" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-purple-500/10 rounded-xl opacity-0 group-hover:opacity-100 backdrop-blur-sm border border-white/10 transition-opacity duration-300" />
                   
                   {/* Glow effect */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-xl blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300" />
                   
                   <div className="relative flex items-center gap-2">
                     <Icon size={18} />
@@ -97,10 +100,10 @@ export default function Navbar() {
                   whileTap={{ scale: 0.9 }}
                 >
                   {/* Glassmorphic background */}
-                  <div className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 backdrop-blur-sm border border-white/10 transition-opacity duration-300" />
+                  <div className="pointer-events-none absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 backdrop-blur-sm border border-white/10 transition-opacity duration-300" />
                   
                   {/* Glow effect */}
-                  <div className="absolute inset-0 bg-cyan-400 rounded-lg blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
+                  <div className="pointer-events-none absolute inset-0 bg-cyan-400 rounded-lg blur-md opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
                   
                   <Icon size={18} className="relative z-10" />
                 </motion.a>

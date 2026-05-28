@@ -1,9 +1,11 @@
 import { Github, Instagram, Linkedin, Mail } from 'lucide-react';
 import { siteConfig } from '@/src/lib/site';
+import LeetCodeIcon from '@/src/app/components/ui/leetcode-icon';
 
 const iconMap = {
   github: Github,
   linkedin: Linkedin,
+  leetcode: LeetCodeIcon,
   instagram: Instagram,
 } as const;
 

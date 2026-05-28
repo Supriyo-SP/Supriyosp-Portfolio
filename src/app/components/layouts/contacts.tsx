@@ -4,6 +4,7 @@ import { FormEvent, useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import { siteConfig } from '@/src/lib/site';
+import LeetCodeIcon from '@/src/app/components/ui/leetcode-icon';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,14 +15,15 @@ export default function Contact() {
   });
   const [statusMessage, setStatusMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const iconMap = {
+    github: Github,
+    linkedin: Linkedin,
+    leetcode: LeetCodeIcon,
+    instagram: Instagram,
+  } as const;
   const socialLinks = siteConfig.socialLinks.map((social) => ({
     ...social,
-    icon:
-      social.platform === 'github'
-        ? Github
-        : social.platform === 'linkedin'
-          ? Linkedin
-          : Instagram,
+    icon: iconMap[social.platform as keyof typeof iconMap] ?? Instagram,
   }));
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
